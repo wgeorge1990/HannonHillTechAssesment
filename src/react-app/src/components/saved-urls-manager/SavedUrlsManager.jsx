@@ -47,7 +47,7 @@ const SavedUrlsManager = () => {
         axios.post('/ProjectPropertiesUpdateUrl', { oldUrl, newUrl })
             .then(response => {
                 setUrls(prevUrls => prevUrls.map(url => url === oldUrl ? newUrl : url));
-                updateSelectOptions(prevUrls.map(url => url === oldUrl ? newUrl : url));
+                updateSelectOptions(prevUrls => prevUrls.map(url => url === oldUrl ? newUrl : url));
             })
             .catch(error => {
                 console.error('Error updating URL:', error);
