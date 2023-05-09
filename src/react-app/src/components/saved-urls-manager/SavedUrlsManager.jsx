@@ -2,10 +2,16 @@ import React,{ useState } from 'react';
 
 const SavedUrlsManager = () => {
     // holds list of saved urls
-    const [urls, setUrls] = useState([]);
+    const [urls, setUrls] = useState(['https://test-stub-one.com/about']);
 
     // holds the current value of the input field
     const [currentUrl, setCurrentUrl] = useState('');
+
+    // holds the index of the URL being edited
+    const [editingIndex, setEditingIndex] = useState(null);
+
+    // indicates whether component is in edit mode or not
+    const [isEditing, setIsEditing] = useState(false)
 
     // Updates the urls sate to include url if it does not already exist,
     // and resets the url input field
@@ -16,9 +22,25 @@ const SavedUrlsManager = () => {
         }
     };
 
-    // editing a url
-    // TODO: implement
+    // startEditing
+    const startEditing = index => {
+        setCurrentUrl(urls[index]);
+        setEditingIndex(index);
+        setIsEditing(true);
+    };
 
+    const saveUrl = () => {
+        if (currentUrl && !urls.includes(currentUrl)) {
+            setUrls(urls.map((url, index) => index === editingIndex ? currentUrl : url));
+            resetInput();
+        }
+    };
+
+    const resetInput = () => {
+        setCurrentUrl('');
+        setEditingIndex(null);
+        setIsEditing(false);
+    };
 
     // deleting a url
     const deleteUrl = index => {
