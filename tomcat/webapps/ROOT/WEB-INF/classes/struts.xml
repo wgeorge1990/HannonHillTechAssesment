@@ -112,5 +112,21 @@
         		<param name="actionName">ProjectProperties</param>
         	</result>
         </action>
-    </package>
+
+		<action name="addUrl" class="com.hannonhill.umt.struts.ProjectPropertiesAction" method="addUrl">
+			<result type="json"/>
+		</action>
+
+		<action name="getUrls" class="com.hannonhill.umt.struts.ProjectPropertiesAction" method="getUrls">
+			<result type="json"/>
+		</action>
+
+		<action name="updateUrl" class="com.hannonhill.umt.struts.ProjectPropertiesAction" method="updateUrl">
+			<result type="json"/>
+		</action>
+
+		<action name="deleteUrl" class="com.hannonhill.umt.struts.ProjectPropertiesAction" method="deleteUrl">
+			<result type="json"/>
+		</action>
+	</package>
 </struts>

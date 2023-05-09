@@ -6,6 +6,7 @@
 package com.hannonhill.umt.struts;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
@@ -15,7 +16,9 @@ import java.util.List;
 
 import javax.xml.rpc.ServiceException;
 
+import com.google.gson.Gson;
 import org.apache.commons.lang.xwork.StringUtils;
+import org.apache.struts2.ServletActionContext;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -34,6 +37,8 @@ import com.hannonhill.umt.util.PathUtil;
  */
 public class ProjectPropertiesAction extends BaseAction
 {
+    private static final List<String> urls = new ArrayList<>();
+
     private static final long serialVersionUID = -845484679818107782L;
 
     private String url = "";
@@ -347,4 +352,32 @@ public class ProjectPropertiesAction extends BaseAction
     {
         this.availableSites = availableSites;
     }
+
+    public String addUrl() {
+        urls.add(url);
+        return SUCCESS;
+    }
+
+    public String getUrls() {
+        return SUCCESS;
+    }
+
+    public String updateUrl() {
+        // Assuming url is in "oldUrl,newUrl" format
+        String[] parts = url.split(",");
+        urls.remove(parts[0]);
+        urls.add(parts[1]);
+        return SUCCESS;
+    }
+
+    public String deleteUrl() {
+        urls.remove(url);
+        return SUCCESS;
+    }
+
+    // This method will be used by Struts2 to serialize the URLs list to JSON
+    public List<String> getUrlsList() {
+        return urls;
+    }
+
 }
