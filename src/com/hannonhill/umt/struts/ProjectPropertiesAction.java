@@ -6,7 +6,6 @@
 package com.hannonhill.umt.struts;
 
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.nio.charset.StandardCharsets;
@@ -19,7 +18,6 @@ import javax.xml.rpc.ServiceException;
 
 import com.google.gson.Gson;
 import org.apache.commons.lang.xwork.StringUtils;
-import org.apache.struts2.ServletActionContext;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -356,32 +354,60 @@ public class ProjectPropertiesAction extends BaseAction
 
     public String addUrl() {
         urls.add(url);
-        return SUCCESS;
+        return toJson();
     }
 
     public String getUrls() {
-        Gson gson = new Gson();
-        String json = gson.toJson(urls);
-        inputStream = new ByteArrayInputStream(json.getBytes(StandardCharsets.UTF_8));
-        return SUCCESS;
+        return toJson();
     }
 
     public String updateUrl() {
-        // Assuming url is in "oldUrl,newUrl" format
         String[] parts = url.split(",");
         urls.remove(parts[0]);
         urls.add(parts[1]);
-        return SUCCESS;
+        return toJson();
     }
 
     public String deleteUrl() {
         urls.remove(url);
+        return toJson();
+    }
+
+    private String toJson() {
+        Gson gson = new Gson();
+        String json = gson.toJson(ProjectPropertiesAction.urls);
+        inputStream = new ByteArrayInputStream(json.getBytes(StandardCharsets.UTF_8));
         return SUCCESS;
     }
 
-    // This method will be used by Struts2 to serialize the URLs list to JSON
-    public List<String> getUrlsList() {
-        return urls;
-    }
+//    public String addUrl() {
+//        urls.add(url);
+//        return SUCCESS;
+//    }
+//
+//    public String getUrls() {
+//        Gson gson = new Gson();
+//        String json = gson.toJson(urls);
+//        inputStream = new ByteArrayInputStream(json.getBytes(StandardCharsets.UTF_8));
+//        return SUCCESS;
+//    }
+//
+//    public String updateUrl() {
+//        // Assuming url is in "oldUrl,newUrl" format
+//        String[] parts = url.split(",");
+//        urls.remove(parts[0]);
+//        urls.add(parts[1]);
+//        return SUCCESS;
+//    }
+//
+//    public String deleteUrl() {
+//        urls.remove(url);
+//        return SUCCESS;
+//    }
+//
+//    // This method will be used by Struts2 to serialize the URLs list to JSON
+//    public List<String> getUrlsList() {
+//        return urls;
+//    }
 
 }

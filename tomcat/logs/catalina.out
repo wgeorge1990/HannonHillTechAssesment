@@ -578,3 +578,68 @@ Caused by: There is no result type defined for type 'json' mapped with name 'suc
 10-May-2023 09:53:52.934 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
 10-May-2023 09:53:52.999 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8010"]
 10-May-2023 09:53:53.003 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1728 ms
+10-May-2023 10:36:00.535 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+10-May-2023 10:36:00.541 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8081"]
+10-May-2023 10:36:00.597 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8010"]
+10-May-2023 10:36:00.654 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+10-May-2023 10:36:00.671 SEVERE [localhost-startStop-2] org.apache.catalina.session.StandardManager.stopInternal Exception unloading sessions to persistent storage
+ java.io.FileNotFoundException: /Users/wg/Universal-Migration-Tool/tomcat/work/Catalina/localhost/ROOT/SESSIONS.ser (No such file or directory)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:101)
+	at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:299)
+	at org.apache.catalina.session.StandardManager.unload(StandardManager.java:265)
+	at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:384)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5425)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1435)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1424)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+10-May-2023 10:36:00.688 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8081"]
+10-May-2023 10:36:00.694 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8010"]
+10-May-2023 10:36:00.695 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8081"]
+10-May-2023 10:36:00.696 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8010"]
+10-May-2023 10:36:21.311 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.24
+10-May-2023 10:36:21.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 27 2017 13:05:30 UTC
+10-May-2023 10:36:21.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.24.0
+10-May-2023 10:36:21.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+10-May-2023 10:36:21.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            13.3.1
+10-May-2023 10:36:21.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+10-May-2023 10:36:21.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre
+10-May-2023 10:36:21.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_371-b11
+10-May-2023 10:36:21.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+10-May-2023 10:36:21.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/wg/Universal-Migration-Tool/tomcat
+10-May-2023 10:36:21.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/wg/Universal-Migration-Tool/tomcat
+10-May-2023 10:36:21.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/wg/Universal-Migration-Tool/tomcat/conf/logging.properties
+10-May-2023 10:36:21.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-May-2023 10:36:21.317 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+10-May-2023 10:36:21.317 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-May-2023 10:36:21.317 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+10-May-2023 10:36:21.317 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/wg/Universal-Migration-Tool/tomcat
+10-May-2023 10:36:21.317 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/wg/Universal-Migration-Tool/tomcat
+10-May-2023 10:36:21.317 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/wg/Universal-Migration-Tool/tomcat/temp
+10-May-2023 10:36:21.317 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/wg/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+10-May-2023 10:36:21.517 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+10-May-2023 10:36:21.532 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+10-May-2023 10:36:21.538 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8010"]
+10-May-2023 10:36:21.540 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+10-May-2023 10:36:21.540 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 640 ms
+10-May-2023 10:36:21.638 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+10-May-2023 10:36:21.638 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.24
+10-May-2023 10:36:21.643 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT]
+10-May-2023 10:36:22.744 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+10-May-2023 10:36:22.907 INFO [localhost-startStop-1] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info Parsing configuration file [struts-default.xml]
+10-May-2023 10:36:22.954 INFO [localhost-startStop-1] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info Unable to locate configuration files of the name struts-plugin.xml, skipping
+10-May-2023 10:36:22.954 INFO [localhost-startStop-1] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info Parsing configuration file [struts-plugin.xml]
+10-May-2023 10:36:22.977 INFO [localhost-startStop-1] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.info Parsing configuration file [struts.xml]
+10-May-2023 10:36:23.220 SEVERE [localhost-startStop-1] com.opensymphony.xwork2.util.logging.commons.CommonsLogger.error Unable to find parent packages json-default
+10-May-2023 10:36:23.246 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT] has finished in [1,602] ms
+10-May-2023 10:36:23.247 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+10-May-2023 10:36:23.317 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8010"]
+10-May-2023 10:36:23.321 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1780 ms
