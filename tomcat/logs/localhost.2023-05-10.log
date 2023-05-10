@@ -1,0 +1,150 @@
+10-May-2023 09:46:34.553 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.filterStart Exception starting filter [struts2]
+ Unable to load configuration. - action - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:141:79
+	at org.apache.struts2.dispatcher.Dispatcher.init(Dispatcher.java:431)
+	at org.apache.struts2.dispatcher.ng.InitOperations.initDispatcher(InitOperations.java:69)
+	at org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.init(StrutsPrepareAndExecuteFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterConfig.initFilter(ApplicationFilterConfig.java:285)
+	at org.apache.catalina.core.ApplicationFilterConfig.getFilter(ApplicationFilterConfig.java:266)
+	at org.apache.catalina.core.ApplicationFilterConfig.<init>(ApplicationFilterConfig.java:108)
+	at org.apache.catalina.core.StandardContext.filterStart(StandardContext.java:4590)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5233)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:752)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:728)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:734)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1141)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1875)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: Unable to load configuration. - action - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:141:79
+	at com.opensymphony.xwork2.config.ConfigurationManager.getConfiguration(ConfigurationManager.java:58)
+	at org.apache.struts2.dispatcher.Dispatcher.init_PreloadConfiguration(Dispatcher.java:374)
+	at org.apache.struts2.dispatcher.Dispatcher.init(Dispatcher.java:418)
+	... 18 more
+Caused by: Action class [com.example.struts2.UrlAction] not found - action - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:141:79
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.verifyAction(XmlConfigurationProvider.java:409)
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.addAction(XmlConfigurationProvider.java:354)
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.addPackage(XmlConfigurationProvider.java:468)
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.loadPackages(XmlConfigurationProvider.java:264)
+	at org.apache.struts2.config.StrutsXmlConfigurationProvider.loadPackages(StrutsXmlConfigurationProvider.java:111)
+	at com.opensymphony.xwork2.config.impl.DefaultConfiguration.reloadContainer(DefaultConfiguration.java:193)
+	at com.opensymphony.xwork2.config.ConfigurationManager.getConfiguration(ConfigurationManager.java:55)
+	... 20 more
+
+10-May-2023 09:47:02.508 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.filterStart Exception starting filter [struts2]
+ Unable to load configuration. - action - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:141:79
+	at org.apache.struts2.dispatcher.Dispatcher.init(Dispatcher.java:431)
+	at org.apache.struts2.dispatcher.ng.InitOperations.initDispatcher(InitOperations.java:69)
+	at org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.init(StrutsPrepareAndExecuteFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterConfig.initFilter(ApplicationFilterConfig.java:285)
+	at org.apache.catalina.core.ApplicationFilterConfig.getFilter(ApplicationFilterConfig.java:266)
+	at org.apache.catalina.core.ApplicationFilterConfig.<init>(ApplicationFilterConfig.java:108)
+	at org.apache.catalina.core.StandardContext.filterStart(StandardContext.java:4590)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5233)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:752)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:728)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:734)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1141)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1875)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: Unable to load configuration. - action - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:141:79
+	at com.opensymphony.xwork2.config.ConfigurationManager.getConfiguration(ConfigurationManager.java:58)
+	at org.apache.struts2.dispatcher.Dispatcher.init_PreloadConfiguration(Dispatcher.java:374)
+	at org.apache.struts2.dispatcher.Dispatcher.init(Dispatcher.java:418)
+	... 18 more
+Caused by: Action class [com.example.struts2.UrlAction] not found - action - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:141:79
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.verifyAction(XmlConfigurationProvider.java:409)
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.addAction(XmlConfigurationProvider.java:354)
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.addPackage(XmlConfigurationProvider.java:468)
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.loadPackages(XmlConfigurationProvider.java:264)
+	at org.apache.struts2.config.StrutsXmlConfigurationProvider.loadPackages(StrutsXmlConfigurationProvider.java:111)
+	at com.opensymphony.xwork2.config.impl.DefaultConfiguration.reloadContainer(DefaultConfiguration.java:193)
+	at com.opensymphony.xwork2.config.ConfigurationManager.getConfiguration(ConfigurationManager.java:55)
+	... 20 more
+
+10-May-2023 09:49:39.030 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.filterStart Exception starting filter [struts2]
+ Unable to load configuration. - action - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:141:99
+	at org.apache.struts2.dispatcher.Dispatcher.init(Dispatcher.java:431)
+	at org.apache.struts2.dispatcher.ng.InitOperations.initDispatcher(InitOperations.java:69)
+	at org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.init(StrutsPrepareAndExecuteFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterConfig.initFilter(ApplicationFilterConfig.java:285)
+	at org.apache.catalina.core.ApplicationFilterConfig.getFilter(ApplicationFilterConfig.java:266)
+	at org.apache.catalina.core.ApplicationFilterConfig.<init>(ApplicationFilterConfig.java:108)
+	at org.apache.catalina.core.StandardContext.filterStart(StandardContext.java:4590)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5233)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:752)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:728)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:734)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1141)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1875)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: Unable to load configuration. - action - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:141:99
+	at com.opensymphony.xwork2.config.ConfigurationManager.getConfiguration(ConfigurationManager.java:58)
+	at org.apache.struts2.dispatcher.Dispatcher.init_PreloadConfiguration(Dispatcher.java:374)
+	at org.apache.struts2.dispatcher.Dispatcher.init(Dispatcher.java:418)
+	... 18 more
+Caused by: Error building results for action addUrl in namespace / - action - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:141:99
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.addAction(XmlConfigurationProvider.java:367)
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.addPackage(XmlConfigurationProvider.java:468)
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.loadPackages(XmlConfigurationProvider.java:264)
+	at org.apache.struts2.config.StrutsXmlConfigurationProvider.loadPackages(StrutsXmlConfigurationProvider.java:111)
+	at com.opensymphony.xwork2.config.impl.DefaultConfiguration.reloadContainer(DefaultConfiguration.java:193)
+	at com.opensymphony.xwork2.config.ConfigurationManager.getConfiguration(ConfigurationManager.java:55)
+	... 20 more
+Caused by: There is no result type defined for type 'json' mapped with name 'success'.  Did you mean 'json'? - result - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:142:41
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.buildResults(XmlConfigurationProvider.java:621)
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.addAction(XmlConfigurationProvider.java:365)
+	... 25 more
+
+10-May-2023 09:50:33.391 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.filterStart Exception starting filter [struts2]
+ Unable to load configuration. - action - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:141:99
+	at org.apache.struts2.dispatcher.Dispatcher.init(Dispatcher.java:431)
+	at org.apache.struts2.dispatcher.ng.InitOperations.initDispatcher(InitOperations.java:69)
+	at org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.init(StrutsPrepareAndExecuteFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterConfig.initFilter(ApplicationFilterConfig.java:285)
+	at org.apache.catalina.core.ApplicationFilterConfig.getFilter(ApplicationFilterConfig.java:266)
+	at org.apache.catalina.core.ApplicationFilterConfig.<init>(ApplicationFilterConfig.java:108)
+	at org.apache.catalina.core.StandardContext.filterStart(StandardContext.java:4590)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5233)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:752)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:728)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:734)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1141)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1875)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: Unable to load configuration. - action - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:141:99
+	at com.opensymphony.xwork2.config.ConfigurationManager.getConfiguration(ConfigurationManager.java:58)
+	at org.apache.struts2.dispatcher.Dispatcher.init_PreloadConfiguration(Dispatcher.java:374)
+	at org.apache.struts2.dispatcher.Dispatcher.init(Dispatcher.java:418)
+	... 18 more
+Caused by: Error building results for action addUrl in namespace / - action - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:141:99
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.addAction(XmlConfigurationProvider.java:367)
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.addPackage(XmlConfigurationProvider.java:468)
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.loadPackages(XmlConfigurationProvider.java:264)
+	at org.apache.struts2.config.StrutsXmlConfigurationProvider.loadPackages(StrutsXmlConfigurationProvider.java:111)
+	at com.opensymphony.xwork2.config.impl.DefaultConfiguration.reloadContainer(DefaultConfiguration.java:193)
+	at com.opensymphony.xwork2.config.ConfigurationManager.getConfiguration(ConfigurationManager.java:55)
+	... 20 more
+Caused by: There is no result type defined for type 'json' mapped with name 'success'.  Did you mean 'json'? - result - file:/Users/wg/Universal-Migration-Tool/tomcat/webapps/ROOT/WEB-INF/classes/struts.xml:142:41
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.buildResults(XmlConfigurationProvider.java:621)
+	at com.opensymphony.xwork2.config.providers.XmlConfigurationProvider.addAction(XmlConfigurationProvider.java:365)
+	... 25 more
+
