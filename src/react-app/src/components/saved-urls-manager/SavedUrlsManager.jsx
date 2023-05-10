@@ -1,5 +1,4 @@
 import React,{ useState, useEffect } from 'react';
-// import axios from 'axios';
 
 const SavedUrlsManager = () => {
     const [urls, setUrls] = useState([]);
@@ -46,7 +45,6 @@ const SavedUrlsManager = () => {
     }, []);
 
 
-
     const updateSelectOptions = (urls) => {
         const jspUrlInput = document.getElementById('url').value = urls[urls.length - 1]
         const select = document.getElementById('savedUrls');
@@ -58,19 +56,7 @@ const SavedUrlsManager = () => {
             select.appendChild(option);
         });
     };
-//
-//     const addUrl = () => {
-//         axios.post('/ProjectPropertiesAddUrl', { url: currentUrl })
-//             .then(response => {
-//                 setUrls(prevUrls => [...prevUrls, currentUrl]);
-//                 resetInput();
-//                 updateSelectOptions([...urls, currentUrl]);
-//                 updateJspInputField(currentUrl); // update the JSP input field
-//             })
-//             .catch(error => {
-//                 console.error('Error adding URL:', error);
-//             });
-//     };
+
 
     const addUrl = () => {
       fetch('/ProjectPropertiesAddUrl', {
@@ -95,18 +81,6 @@ const SavedUrlsManager = () => {
     };
 
 
-//     const updateUrl = (oldUrl, newUrl) => {
-//         axios.post('/ProjectPropertiesUpdateUrl', { oldUrl, newUrl })
-//             .then(response => {
-//                 setUrls(prevUrls => prevUrls.map(url => url === oldUrl ? newUrl : url));
-//                 updateSelectOptions(prevUrls => prevUrls.map(url => url === oldUrl ? newUrl : url));
-//                 updateJspInputField(newUrl); // update the JSP input field
-//             })
-//             .catch(error => {
-//                 console.error('Error updating URL:', error);
-//             });
-//     }
-
     const updateUrl = (oldUrl, newUrl) => {
       fetch('/ProjectPropertiesUpdateUrl', {
         method: 'POST',
@@ -127,20 +101,6 @@ const SavedUrlsManager = () => {
           console.error('Error updating URL:', error);
         });
     };
-
-//     const deleteUrl = index => {
-//         const urlToDelete = urls[index];
-//         axios.post('/ProjectPropertiesDeleteUrl', { url: urlToDelete })
-//             .then(response => {
-//                 let newUrls = urls.filter((_, i) => i !== index);
-//                 setUrls(newUrls);
-//                 updateSelectOptions(newUrls);
-//                 updateJspInputField(newUrls[0]); // update the JSP input field
-//             })
-//             .catch(error => {
-//                 console.error('Error deleting URL:', error);
-//             });
-//     };
 
 
     const deleteUrl = index => {
