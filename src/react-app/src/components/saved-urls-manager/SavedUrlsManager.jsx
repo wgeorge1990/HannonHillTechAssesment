@@ -20,8 +20,9 @@ const SavedUrlsManager = () => {
 
          axios.get('/ProjectPropertiesGetUrls')
             .then(response => {
-//                 setUrls(response.data);
-//                 updateSelectOptions(response.data);
+                // requests are currently breaking react so left commented for time being
+                // setUrls(response.data);
+                // updateSelectOptions(response.data);
                 console.log('response:', response)
                 console.log('response.data:', response.data)
 
@@ -120,21 +121,23 @@ const SavedUrlsManager = () => {
      <>
        <h2>Saved URLs Manager</h2>
        <input
+         className="form-control form-control-lg"
          type="text"
          value={currentUrl}
          onChange={(e) => setCurrentUrl(e.target.value)}
          placeholder="https://"
+         aria-label="Url"
        />
        {isEditing ? (
-         <button onClick={saveUrl}>Save</button>
+         <button type="button" class="btn btn-primary btn-sm p-1 m-1" onClick={saveUrl}>Save</button>
        ) : (
-         <button onClick={addUrl}>Add</button>
+         <button type="button" class="btn btn-primary btn-sm p-1 m-1" onClick={addUrl}>Add</button>
        )}
        {urls.map((url, index) => (
          <div key={index}>
            {url}
-           <button onClick={() => startEditing(index)}>Edit</button>
-           <button onClick={() => deleteUrl(index)}>Delete</button>
+           <button type="button" class="btn btn-primary btn-sm p-1 m-1" onClick={() => startEditing(index)}>Edit</button>
+           <button type="button" class="btn btn-secondary btn-sm p-1 m-1" onClick={() => deleteUrl(index)}>Delete</button>
          </div>
        ))}
      </>
