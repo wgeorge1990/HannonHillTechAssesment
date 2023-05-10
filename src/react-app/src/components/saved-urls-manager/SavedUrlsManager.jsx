@@ -7,21 +7,49 @@ const SavedUrlsManager = () => {
     const [editingIndex, setEditingIndex] = useState(null);
     const [isEditing, setIsEditing] = useState(false)
 
+    const updateJspInputField = (url) => {
+        document.getElementById('url').value = url;
+    };
+
     useEffect(() => {
-        axios.get('/ProjectPropertiesGetUrls')
+        // Add an event listener to the select element
+        const select = document.getElementById('savedUrls');
+        if (select) {
+            select.addEventListener('change', (e) => updateJspInputField(e.target.value));
+        }
+
+         axios.get('/ProjectPropertiesGetUrls')
             .then(response => {
-                setUrls(response.data)
-                updateSelectOptions(response.data)
+//                 setUrls(response.data);
+//                 updateSelectOptions(response.data);
+                console.log('response:', response)
+                console.log('response.data:', response.data)
+
             })
             .catch(error => {
-                console.error('Error fetching URLs:', error);
+                console.error('Error fetching saved URLs:', error);
             });
+
+
+        // Remove the event listener when the component unmounts
+        return () => {
+            if (select) {
+                select.removeEventListener('change', (e) => updateJspInputField(e.target.value));
+            }
+        };
     }, []);
 
+    useEffect(() => {
+
+    },[])
+
+
+
     const updateSelectOptions = (urls) => {
+        const jspUrlInput = document.getElementById('url').value = urls[urls.length - 1]
         const select = document.getElementById('savedUrls');
         select.innerHTML = '';
-        urls.forEach(url => {
+        urls?.forEach(url => {
             const option = document.createElement('option');
             option.value = url;
             option.text = url;
@@ -30,17 +58,16 @@ const SavedUrlsManager = () => {
     };
 
     const addUrl = () => {
-        if (currentUrl && !urls.includes(currentUrl)) {
-            axios.post('/ProjectPropertiesAddUrl', { url: currentUrl })
-                .then(response => {
-                    setUrls(prevUrls => [...prevUrls, currentUrl]);
-                    resetInput();
-                    updateSelectOptions([...urls, currentUrl]);
-                })
-                .catch(error => {
-                    console.error('Error adding URL:', error);
-                });
-        }
+        axios.post('/ProjectPropertiesAddUrl', { url: currentUrl })
+            .then(response => {
+                setUrls(prevUrls => [...prevUrls, currentUrl]);
+                resetInput();
+                updateSelectOptions([...urls, currentUrl]);
+                updateJspInputField(currentUrl); // update the JSP input field
+            })
+            .catch(error => {
+                console.error('Error adding URL:', error);
+            });
     };
 
     const updateUrl = (oldUrl, newUrl) => {
@@ -48,6 +75,7 @@ const SavedUrlsManager = () => {
             .then(response => {
                 setUrls(prevUrls => prevUrls.map(url => url === oldUrl ? newUrl : url));
                 updateSelectOptions(prevUrls => prevUrls.map(url => url === oldUrl ? newUrl : url));
+                updateJspInputField(newUrl); // update the JSP input field
             })
             .catch(error => {
                 console.error('Error updating URL:', error);
@@ -56,12 +84,12 @@ const SavedUrlsManager = () => {
 
     const deleteUrl = index => {
         const urlToDelete = urls[index];
-
         axios.post('/ProjectPropertiesDeleteUrl', { url: urlToDelete })
             .then(response => {
                 let newUrls = urls.filter((_, i) => i !== index);
                 setUrls(newUrls);
                 updateSelectOptions(newUrls);
+                updateJspInputField(newUrls[0]); // update the JSP input field
             })
             .catch(error => {
                 console.error('Error deleting URL:', error);
@@ -88,30 +116,29 @@ const SavedUrlsManager = () => {
         setIsEditing(false);
     };
 
-    return (
-        <React.Fragment>
-            <h2>Saved URLs Manager</h2>
-
-            <input type="text"
-                   value={currentUrl}
-                   onChange={e => setCurrentUrl(e.target.value)}
-                   placeholder="Enter a URL and click Add" />
-
-            { isEditing
-                ? (<button onClick={saveUrl}>Save</button>)
-                : (<button onClick={addUrl}>Add</button>)
-            }
-
-           { urls.map((url, index) => (
-               <div key={index}>
-                   {url}
-                   <button onClick={() => startEditing(index)}>Edit</button>
-                   <button onClick={() => deleteUrl(index)}>Delete</button>
-               </div>
-           ))}
-
-       </React.Fragment>
+   return (
+     <>
+       <h2>Saved URLs Manager</h2>
+       <input
+         type="text"
+         value={currentUrl}
+         onChange={(e) => setCurrentUrl(e.target.value)}
+         placeholder="https://"
+       />
+       {isEditing ? (
+         <button onClick={saveUrl}>Save</button>
+       ) : (
+         <button onClick={addUrl}>Add</button>
+       )}
+       {urls.map((url, index) => (
+         <div key={index}>
+           {url}
+           <button onClick={() => startEditing(index)}>Edit</button>
+           <button onClick={() => deleteUrl(index)}>Delete</button>
+         </div>
+       ))}
+     </>
    );
-};
+}
 
 export default SavedUrlsManager;

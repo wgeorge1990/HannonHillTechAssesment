@@ -9,6 +9,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.nio.charset.StandardCharsets;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -359,6 +360,9 @@ public class ProjectPropertiesAction extends BaseAction
     }
 
     public String getUrls() {
+        Gson gson = new Gson();
+        String json = gson.toJson(urls);
+        inputStream = new ByteArrayInputStream(json.getBytes(StandardCharsets.UTF_8));
         return SUCCESS;
     }
 

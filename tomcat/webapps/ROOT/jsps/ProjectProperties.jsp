@@ -37,7 +37,7 @@
                 <div class="controls">
                   <input class="span4" type="text" id="url" placeholder="https://" name="url" value="<s:property value="url"/>" />
                     <select id="savedUrls" class="span4">
-                       <!-- TODO: Options will be populated dynamically in later step -->
+                       <!-- Dynamically added from the CRUD form via react -->
                     </select>
                 </div>
               </div>
